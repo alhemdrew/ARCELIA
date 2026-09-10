@@ -18,7 +18,7 @@ export default function HomePage() {
                 Property opportunities
               </div>
 
-              <h1 className="text-4xl font-semibold leading-tight text-slate-900 sm:text-5xl md:text-6xl">Invest today for your child's tomorrow.</h1>
+              <h1 className="text-4xl font-semibold leading-tight text-slate-900 sm:text-5xl md:text-6xl">Invest today for your tomorrow</h1>
 
               <p className="mt-6 max-w-xl text-lg text-slate-700">Secure land or a home with verified information and fast WhatsApp responses. We present each opportunity using supplied flyers and videos so you can make an informed next step.</p>
 
