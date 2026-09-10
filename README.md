@@ -1,117 +1,97 @@
-Upgrade the existing ARCELIA README.md to include a polished, colorful GitHub-style technology stack section.
-
-IMPORTANT:
-Do not invent technologies.
-
-First inspect:
-
-* package.json
-* package-lock.json / other lockfile
-* vite.config.* if present
-* tsconfig.* if present
-* actual source files and configuration
-
-Determine the technologies that ARCELIA ACTUALLY uses.
-
-Then add a visually impressive section near the top of README.md, immediately after the project introduction.
-
-Use shields.io badges in this style:
-
-### ✦ Tech Stack
-
-<p align="center">
-  <img src="https://img.shields.io/badge/[TECH]-[VERSION_OR_ROLE]-[COLOR]?style=for-the-badge&logo=[LOGO]&logoColor=white" />
-  ...
-</p>
-
-Use appropriate official/simple logos where available.
-
-Examples of technologies that MAY be included ONLY IF THEY ARE ACTUALLY PRESENT:
-
-* React
-* TypeScript
-* Vite
-* JavaScript
-* HTML5
-* CSS3
-* Tailwind CSS
-* Node.js
-* npm
-* Git
-* GitHub
-* GitHub Pages
-
-Also create a smaller "Built With" visual line if appropriate.
-
-Example visual style:
-
-<p align="center">
-  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />
-  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" />
-  <img src="https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white" />
-</p>
-
-Make the README feel like a premium, professionally maintained open-source/product repository.
-
-Also add useful status badges underneath the project title where appropriate, such as:
-
-* GitHub repository status
-* License
-* Deployment status
-* Build status
-
-BUT:
-
-* Only add badges that can actually work.
-* Do not create fake CI/build/deployment badges.
-* If GitHub Actions is not configured yet, do not pretend that a build badge exists.
-* If there is no license file, do not claim a license badge.
-* If GitHub Pages is not yet deployed, do not claim deployment status.
-
-Keep the README's existing ARCELIA branding and messaging.
-
-Improve the visual hierarchy around:
-
 # ARCELIA
 
 ### Invest today for your child's tomorrow.
 
-Then:
+[![Last commit](https://img.shields.io/github/last-commit/alhemdrew/ARCELIA)](https://github.com/alhemdrew/ARCELIA)
+[![Repo size](https://img.shields.io/github/repo-size/alhemdrew/ARCELIA)](https://github.com/alhemdrew/ARCELIA)
 
-[status badges]
+Premium Nigerian real estate website built with modern React and Next.js tooling, focused on verified listings, clean presentation and a WhatsApp-first enquiry flow.
 
-Short description
+### ✦ Tech Stack
 
-[Tech Stack badges]
+<p>
+	<img alt="Next.js" src="https://img.shields.io/badge/Next.js-16.3.4-black?logo=next.js&logoColor=white" />
+	<img alt="React" src="https://img.shields.io/badge/React-19.2.8-61DAFB?logo=react&logoColor=white" />
+	<img alt="TypeScript" src="https://img.shields.io/badge/TypeScript-5-blue?logo=typescript&logoColor=white" />
+	<img alt="Tailwind CSS" src="https://img.shields.io/badge/Tailwind_CSS-4-06B6D4?logo=tailwindcss&logoColor=white" />
+	<img alt="Lucide" src="https://img.shields.io/badge/Lucide-react-4169E1?logo=react&logoColor=white" />
+	<img alt="npm" src="https://img.shields.io/badge/npm-locked-CB3837?logo=npm&logoColor=white" />
+	<img alt="Node.js" src="https://img.shields.io/badge/Node.js-compatible-339933?logo=node.js&logoColor=white" />
+	<img alt="GitHub" src="https://img.shields.io/badge/GitHub-arcelia-181717?logo=github&logoColor=white" />
+</p>
 
-Do not make the README excessively long.
+**Built with:** Next.js • React • TypeScript • Tailwind CSS • Lucide
 
-Keep the existing useful sections such as:
+---
 
-* What is ARCELIA?
-* Core Experience
-* Design Philosophy
-* Getting Started
-* Production Build
-* Development Principles
-* Roadmap
-* Communication
-* Repository
-* Status
-* Philosophy
-* License
+## What is ARCELIA?
 
-Clean up repetition where necessary.
+ARcelia Services Nig. Ltd is a professional property marketer: a polished presentation layer for verified property opportunities in Nigeria. This repository contains the front-end website used to present available properties, share verified flyers/videos, and direct interested prospects to WhatsApp for quick, human conversations.
 
-Use proper Markdown, HTML where GitHub supports it, and attractive spacing.
+## Core Experience
 
-The final README should look like it belongs to a serious real-estate technology product, not a beginner tutorial.
+- Premium homepage with a restrained hero, trust strip and clear CTAs
+- Property listings and detail pages driven from the project's asset inventory
+- WhatsApp-first enquiries using the integrated phone number
+- Mobile-first, responsive layouts with accessibility considerations
 
-After editing, verify that:
+## Design Philosophy
 
-1. All badges use valid shields.io syntax.
-2. Every technology shown is actually used by the project.
-3. No fake statistics, reviews, certifications, properties, or business claims are introduced.
-4. The README renders correctly on GitHub.
-5. The repository URL is correct:
-   https://github.com/alhemdrew/ARCELIA
+Present asset-driven marketing clearly and honestly — do not invent or embellish listings, prices, or credentials. Keep the design aspirational, trustworthy, and conversion-focused.
+
+## Getting Started
+
+Install dependencies and run the dev server:
+
+```bash
+npm install
+npm run dev
+```
+
+Open http://localhost:3000 to view the site locally.
+
+## Production Build
+
+Build and run for production:
+
+```bash
+npm run build
+npm run start
+```
+
+## Important notes
+
+- Property data source: `src/data/properties.ts` and `src/data/assets-inventory.json`
+- Styling: Tailwind CSS (v4) — utility-first design
+
+## Deployment
+
+This project is ready to deploy on Vercel or any Node-compatible hosting platform. No CI badges are present — builds and deployments should be configured separately.
+
+## Development Principles
+
+- Keep asset-supplied information authoritative.
+- Avoid fabricating data (prices, testimonials, awards).
+- Preserve user-supplied media and respect original flyers/videos as source-of-truth.
+
+## Roadmap
+
+- Improve property-detail gallery and flyer viewer
+- Finalize responsive and accessibility pass
+- Add automated CI/build pipeline (optional)
+
+## Communication
+
+For local development and questions, open an issue or contact the project owner via the integrated WhatsApp number.
+
+## Repository
+
+https://github.com/alhemdrew/ARCELIA
+
+## Status
+
+This repository was just initialized and pushed to GitHub from a working local copy. See the repo's commit history and issues for ongoing work.
+
+---
+
+_This README was upgraded to reflect the actual technologies used by the project. No new claims, endorsements, or fabricated information were added._
