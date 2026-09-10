@@ -18,6 +18,8 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  // Disable the Next.js dev overlay/indicators
+  devIndicators: false,
 };
 
 export default nextConfig;
