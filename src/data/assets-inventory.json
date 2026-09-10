@@ -1,0 +1,96 @@
+{
+  "generatedAt": "2026-09-10T00:00:00Z",
+  "source": "public/",
+  "assets": [
+    {
+      "file": "300sqm-N30m.jpeg",
+      "headline": "CityView Park & Resort",
+      "location": "Plot 93, Gousa District, by Idu Train Station, Abuja",
+      "size": "500SQM",
+      "priceText": "N30M",
+      "initialDeposit": "N1,500,000",
+      "paymentPlan": "Outright N30M / 6 months N31M / 12 months N32M / 18 months N33M",
+      "developer": "LCR",
+      "approvals": ["FCDA Approved"],
+      "suggestedPropertySlug": "cityview-500sqm-n30m"
+    },
+    {
+      "file": "500sqm--30m.jpeg",
+      "headline": "CityView Park & Resort",
+      "location": "Plot 93, Gousa District, by Airport Road, Abuja",
+      "size": "500SQM",
+      "priceText": "N30,000,000",
+      "developer": "LCR",
+      "suggestedPropertySlug": "cityview-500sqm-n30m-2"
+    },
+    {
+      "file": "1000sqm--n60m.jpeg",
+      "headline": "CityView Park & Resort",
+      "location": "Plot 93, Gousa District, by Airport Road / Idu Train Station, Abuja",
+      "size": "1000SQM",
+      "priceText": "N60,000,000",
+      "developer": "LCR",
+      "suggestedPropertySlug": "cityview-1000sqm-n60m"
+    },
+    {
+      "file": "Imagine.jpeg",
+      "headline": "CityView Park & Resort - marketing slide",
+      "text": "Thinking of what you can build on your land? Now let's see. Swipe",
+      "developer": "LCR",
+      "suggestedPropertySlug": null
+    },
+    {
+      "file": "200sqm-N12m.jpeg",
+      "headline": "CityView Park & Resort",
+      "size": "200SQM",
+      "priceText": "N12,000,000",
+      "initialDeposit": "N750,000",
+      "paymentPlan": "Outright N12M / 6 months N12.5M / 12 months N13M / 18 months N13.5M",
+      "developer": "LCR",
+      "suggestedPropertySlug": "cityview-200sqm-n12m"
+    },
+    {
+      "file": "1000sqm-N100m.jpeg",
+      "headline": "CityView Park & Resort",
+      "size": "1000SQM",
+      "priceText": "N100,000,000",
+      "initialDeposit": "N5,000,000",
+      "paymentPlan": "Outright N100M / 6 months N102M / 12 months N104M / 18 months N106M",
+      "developer": "LCR",
+      "suggestedPropertySlug": "cityview-1000sqm-n100m"
+    },
+    {
+      "file": "200qm-N12m.jpeg",
+      "note": "duplicate/alternate naming of 200sqm-N12m.jpeg",
+      "suggestedPropertySlug": "cityview-200sqm-n12m"
+    },
+    {
+      "file": "300sqm-N18m.jpeg",
+      "headline": "CityView Park & Resort",
+      "size": "300SQM",
+      "priceText": "N18,000,000",
+      "initialDeposit": "N1,000,000",
+      "paymentPlan": "Outright N18M / 6 months N19M / 12 months N20M / 18 months N21M",
+      "developer": "LCR",
+      "suggestedPropertySlug": "cityview-300sqm-n18m"
+    },
+    {
+      "file": "300sqm--n18m.jpeg",
+      "note": "alternate naming for 300sqm-N18m.jpeg",
+      "suggestedPropertySlug": "cityview-300sqm-n18m"
+    },
+    {
+      "file": "ad-vid.mp4",
+      "type": "video",
+      "description": "Promotional ad video for CityView Park & Resort",
+      "suggestedPropertySlug": null
+    },
+    {
+      "file": "1000sqm-N60m.jpeg",
+      "headline": "CityView Park & Resort",
+      "size": "1000SQM",
+      "priceText": "N60,000,000",
+      "suggestedPropertySlug": "cityview-1000sqm-n60m-2"
+    }
+  ]
+}
