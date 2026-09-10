@@ -1,9 +1,12 @@
+import "use client";
+
 import Link from "next/link";
-import { Suspense } from "react";
+import { useMemo } from "react";
 import { ArrowRight, Filter, MapPin } from "lucide-react";
 import { PropertyCard } from "@/components/property-card";
 import { SearchPanel } from "@/components/search-panel";
-import { properties } from "@/data/properties";
+import properties from "@/data/properties";
+import { useSearchParams } from "next/navigation";
 
 function matchesBudget(propertyPrice: number, budget: string | null) {
   if (!budget) return true;
@@ -12,28 +15,26 @@ function matchesBudget(propertyPrice: number, budget: string | null) {
   return propertyPrice >= min * 1000000 && propertyPrice <= max * 1000000;
 }
 
-export default async function PropertiesPage({
-  searchParams,
-}: {
-  searchParams?: Promise<{ [key: string]: string | string[] | undefined }> | { [key: string]: string | string[] | undefined };
-}) {
-  const query = searchParams ? await Promise.resolve(searchParams) : {};
+export default function PropertiesPage() {
+  const searchParams = useSearchParams();
 
-  const type = typeof query.type === "string" ? query.type : "";
-  const location = typeof query.location === "string" ? query.location : "";
-  const purpose = typeof (query as any).purpose === "string" ? (query as any).purpose : "";
-  const budget = typeof query.budget === "string" ? query.budget : "";
-  const bedrooms = typeof query.bedrooms === "string" ? query.bedrooms : "";
+  const type = searchParams?.get("type") ?? "";
+  const location = searchParams?.get("location") ?? "";
+  const purpose = searchParams?.get("purpose") ?? "";
+  const budget = searchParams?.get("budget") ?? "";
+  const bedrooms = searchParams?.get("bedrooms") ?? "";
 
-  const filteredProperties = properties.filter((property) => {
-    const matchesType = !type || property.type === type;
-    const matchesLocation = !location || (property.location ?? "").includes(location) || property.city === location;
-    const matchesPurpose = !purpose || (property.purpose ?? "") === purpose;
-    const matchesBudgetFilter = matchesBudget(property.price ?? 0, budget);
-    const matchesBedrooms = !bedrooms || (property.bedrooms ?? 0) >= Number(bedrooms);
+  const filteredProperties = useMemo(() => {
+    return properties.filter((property) => {
+      const matchesType = !type || property.type === type;
+      const matchesLocation = !location || (property.location ?? "").includes(location) || property.city === location;
+      const matchesPurpose = !purpose || (property.purpose ?? "") === purpose;
+      const matchesBudgetFilter = matchesBudget(property.price ?? 0, budget);
+      const matchesBedrooms = !bedrooms || (property.bedrooms ?? 0) >= Number(bedrooms);
 
-    return matchesType && matchesLocation && matchesPurpose && matchesBudgetFilter && matchesBedrooms;
-  });
+      return matchesType && matchesLocation && matchesPurpose && matchesBudgetFilter && matchesBedrooms;
+    });
+  }, [type, location, purpose, budget, bedrooms]);
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
@@ -49,9 +50,7 @@ export default async function PropertiesPage({
       </div>
 
       <div className="mb-8">
-        <Suspense fallback={<div className="h-[220px] rounded-[30px] border border-slate-200 bg-white/80" />}>
-          <SearchPanel />
-        </Suspense>
+        <SearchPanel />
       </div>
 
       <div className="mb-8 rounded-[28px] border border-slate-200 bg-slate-50 p-5">
