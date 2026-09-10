@@ -27,7 +27,7 @@ export default async function PropertiesPage({
 
   const filteredProperties = properties.filter((property) => {
     const matchesType = !type || property.type === type;
-    const matchesLocation = !location || property.location.includes(location) || property.city === location;
+    const matchesLocation = !location || (property.location ?? "").includes(location) || property.city === location;
     const matchesPurpose = !purpose || (property.purpose ?? "") === purpose;
     const matchesBudgetFilter = matchesBudget(property.price ?? 0, budget);
     const matchesBedrooms = !bedrooms || (property.bedrooms ?? 0) >= Number(bedrooms);

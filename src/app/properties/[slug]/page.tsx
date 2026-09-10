@@ -53,14 +53,20 @@ async function PropertyDetailClient({ params }: { params: Promise<{ slug: string
         <div>
           <div className="relative overflow-hidden rounded-[30px] border border-slate-200 bg-white shadow-[0_25px_80px_rgba(15,23,42,0.08)]">
             <div className="relative h-[480px]">
-              <Image src={property.images[0].src} alt={property.images[0].alt} fill className="object-cover" priority />
+              <Image
+                src={property?.images?.[0]?.src ?? "/300sqm-N30m.jpeg"}
+                alt={property?.images?.[0]?.alt ?? property?.title ?? "property"}
+                fill
+                className="object-cover"
+                priority
+              />
             </div>
           </div>
 
           <div className="mt-4 grid grid-cols-3 gap-3">
-            {property.images.slice(0, 3).map((image) => (
+            {(property?.images ?? []).slice(0, 3).map((image) => (
               <div key={image.src} className="relative h-28 overflow-hidden rounded-2xl border border-slate-200 bg-slate-100">
-                <Image src={image.src} alt={image.alt} fill className="object-cover" />
+                <Image src={image.src ?? "/300sqm-N30m.jpeg"} alt={image.alt ?? property?.title ?? "property"} fill className="object-cover" />
               </div>
             ))}
           </div>
