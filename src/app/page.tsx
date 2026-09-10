@@ -60,12 +60,12 @@ export default function HomePage() {
           </div>
         </div>
 
-                <h1 className="text-4xl font-semibold leading-tight text-slate-900 sm:text-5xl md:text-6xl">Invest today for your  tomorrow</h1>
-          {properties.map((property) => (
-            <PropertyCard key={property.id} property={property as any} />
-          ))}
-        </div>
-      </section>
+      <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {properties.map((property) => (
+          <PropertyCard key={property.id} property={property as any} />
+        ))}
+      </div>
+    </section>
 
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">

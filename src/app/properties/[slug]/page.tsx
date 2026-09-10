@@ -23,17 +23,17 @@ async function PropertyDetailClient({ params }: { params: Promise<{ slug: string
 
   const formattedPrice = (() => {
     try {
-      if (property.price && property.currency) {
+      if (property?.price && property?.currency) {
         return new Intl.NumberFormat("en-NG", {
           style: "currency",
           currency: property.currency,
           maximumFractionDigits: 0,
-        }).format(property.price);
+        }).format(property.price as number);
       }
     } catch (e) {
       // fall back
     }
-    return (property.priceText as any) || "Price on request";
+    return (property?.priceText as any) || "Price on request";
   })();
 
   return (

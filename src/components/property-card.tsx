@@ -36,7 +36,7 @@ export function PropertyCard({ property }: { property: Property }) {
           className="object-cover transition duration-500 group-hover:scale-105"
         />
         <div className="absolute inset-x-0 top-3 flex items-center justify-between px-4">
-          <span className="rounded-full bg-white/90 px-3 py-1 text-xs font-semibold text-slate-900">{property.type}</span>
+          <span className="rounded-full bg-white/90 px-3 py-1 text-xs font-semibold text-slate-900">{property.type ?? ""}</span>
           {property.verified && (
             <span className="inline-flex items-center gap-2 rounded-full bg-emerald-600/95 px-3 py-1 text-xs font-semibold text-white">
               <Check className="h-3 w-3" /> Verified
@@ -51,23 +51,23 @@ export function PropertyCard({ property }: { property: Property }) {
             <h3 className="text-xl font-semibold text-slate-900">{property.title}</h3>
             <div className="mt-2 flex items-center gap-1 text-sm text-slate-500">
               <MapPin className="h-4 w-4" />
-              <span>{property.location}</span>
+              <span>{property.location ?? ""}</span>
             </div>
           </div>
           <div className="text-right">
             <div className="text-lg font-semibold text-slate-900">{formattedPrice}</div>
-            <div className="text-xs uppercase tracking-[0.18em] text-slate-400">{property.purpose || "Available"}</div>
+            <div className="text-xs uppercase tracking-[0.18em] text-slate-400">{property.purpose ?? "Available"}</div>
           </div>
         </div>
 
         <div className="flex items-center gap-4 border-y border-slate-100 py-3 text-sm text-slate-600">
-          {(property as any).bedrooms > 0 && (
+          {((property as any).bedrooms ?? 0) > 0 && (
             <div className="flex items-center gap-2">
               <BedDouble className="h-4 w-4" />
               <span>{(property as any).bedrooms} Beds</span>
             </div>
           )}
-          {(property as any).bathrooms > 0 && (
+          {((property as any).bathrooms ?? 0) > 0 && (
             <div className="flex items-center gap-2">
               <Bath className="h-4 w-4" />
               <span>{(property as any).bathrooms} Baths</span>

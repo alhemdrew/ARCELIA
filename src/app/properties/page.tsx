@@ -21,16 +21,16 @@ export default async function PropertiesPage({
 
   const type = typeof query.type === "string" ? query.type : "";
   const location = typeof query.location === "string" ? query.location : "";
-  const purpose = typeof query.purpose === "string" ? query.purpose : "";
+  const purpose = typeof (query as any).purpose === "string" ? (query as any).purpose : "";
   const budget = typeof query.budget === "string" ? query.budget : "";
   const bedrooms = typeof query.bedrooms === "string" ? query.bedrooms : "";
 
   const filteredProperties = properties.filter((property) => {
     const matchesType = !type || property.type === type;
     const matchesLocation = !location || property.location.includes(location) || property.city === location;
-    const matchesPurpose = !purpose || property.purpose === purpose;
-    const matchesBudgetFilter = matchesBudget(property.price, budget);
-    const matchesBedrooms = !bedrooms || property.bedrooms >= Number(bedrooms);
+    const matchesPurpose = !purpose || (property.purpose ?? "") === purpose;
+    const matchesBudgetFilter = matchesBudget(property.price ?? 0, budget);
+    const matchesBedrooms = !bedrooms || (property.bedrooms ?? 0) >= Number(bedrooms);
 
     return matchesType && matchesLocation && matchesPurpose && matchesBudgetFilter && matchesBedrooms;
   });
