@@ -60,7 +60,7 @@ export default function HomePage() {
           </div>
         </div>
 
-        <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                <h1 className="text-4xl font-semibold leading-tight text-slate-900 sm:text-5xl md:text-6xl">Invest today for your  tomorrow</h1>
           {properties.map((property) => (
             <PropertyCard key={property.id} property={property as any} />
           ))}
