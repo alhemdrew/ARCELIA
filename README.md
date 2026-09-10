@@ -92,6 +92,3 @@ https://github.com/alhemdrew/ARCELIA
 
 This repository was just initialized and pushed to GitHub from a working local copy. See the repo's commit history and issues for ongoing work.
 
----
-
-_This README was upgraded to reflect the actual technologies used by the project. No new claims, endorsements, or fabricated information were added._
