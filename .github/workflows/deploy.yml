@@ -30,8 +30,15 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Export static site
-        run: npx next export -o out
+      - name: Ensure static output
+        run: |
+          # Next 16 uses `output: 'export'` in next.config.ts — `next build` generates `out/`.
+          if [ -d out ]; then
+            echo "out/ exists" && ls -lah out
+          else
+            echo "out/ not found, listing workspace:" && ls -lah
+            exit 1
+          fi
 
       - name: Upload artifact for GitHub Pages
         uses: actions/upload-pages-artifact@v1

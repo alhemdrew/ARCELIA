@@ -24,8 +24,14 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Export
-        run: npx next export -o out
+      - name: Ensure static output
+        run: |
+          if [ -d out ]; then
+            echo "out/ exists" && ls -lah out
+          else
+            echo "out/ not found, listing workspace:" && ls -lah
+            exit 1
+          fi
 
       - name: Commit and push to gh-pages
         run: |
