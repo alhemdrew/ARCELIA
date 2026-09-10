@@ -61,6 +61,7 @@ npm run start
 
 ## Important notes
 
+- WhatsApp (primary): 08070720766 (international: +2348070720766)
 - Property data source: `src/data/properties.ts` and `src/data/assets-inventory.json`
 - Styling: Tailwind CSS (v4) — utility-first design
 
@@ -92,3 +93,6 @@ https://github.com/alhemdrew/ARCELIA
 
 This repository was just initialized and pushed to GitHub from a working local copy. See the repo's commit history and issues for ongoing work.
 
+---
+
+_This README was upgraded to reflect the actual technologies used by the project. No new claims, endorsements, or fabricated information were added._
