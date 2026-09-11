@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import assetPath from "../lib/asset-path";
 import { ArrowRight, Building2 } from "lucide-react";
 import { PropertyCard } from "@/components/property-card";
 import { WhatsAppButton } from "@/components/whatsapp-button";
@@ -35,10 +36,10 @@ export default function HomePage() {
 
             <div className="order-1 relative -mt-6 lg:order-2">
               <div className="relative h-[420px] overflow-hidden rounded-[26px] bg-white shadow-[0_30px_90px_rgba(15,23,42,0.08)]">
-                <video className="absolute inset-0 h-full w-full object-cover" src="/ad-vid.mp4" poster="/300sqm-N30m.jpeg" muted loop playsInline autoPlay />
+                <video className="absolute inset-0 h-full w-full object-cover" src={assetPath('/ad-vid.mp4')} poster={assetPath('/300sqm-N30m.jpeg')} muted loop playsInline autoPlay />
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent to-white/60" />
                 <div className="absolute left-6 bottom-6 flex items-center gap-4 rounded-xl bg-white/80 p-3 shadow-sm backdrop-blur-sm">
-                  <Image src="/300sqm-N30m.jpeg" alt="sample" width={88} height={60} className="rounded-md object-cover" />
+                  <Image src={assetPath('/300sqm-N30m.jpeg')} alt="sample" width={88} height={60} className="rounded-md object-cover" />
                   <div>
                     <div className="text-sm font-semibold text-slate-900">Secure a 300sqm plot</div>
                     <div className="text-xs text-slate-600">Starting from N30m</div>

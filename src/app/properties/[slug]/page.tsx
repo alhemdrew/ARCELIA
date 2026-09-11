@@ -1,4 +1,5 @@
 import Image from "next/image";
+import assetPath from "../../../lib/asset-path";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Bath, BedDouble, CalendarDays, Check, MapPin, MessageCircle, MoveRight, Ruler, ShieldCheck, Square, Star } from "lucide-react";
@@ -54,7 +55,7 @@ async function PropertyDetailClient({ params }: { params: Promise<{ slug: string
           <div className="relative overflow-hidden rounded-[30px] border border-slate-200 bg-white shadow-[0_25px_80px_rgba(15,23,42,0.08)]">
             <div className="relative h-[480px]">
               <Image
-                src={property?.images?.[0]?.src ?? "/300sqm-N30m.jpeg"}
+                src={assetPath(property?.images?.[0]?.src ?? "/300sqm-N30m.jpeg")}
                 alt={property?.images?.[0]?.alt ?? property?.title ?? "property"}
                 fill
                 className="object-cover"
@@ -66,7 +67,7 @@ async function PropertyDetailClient({ params }: { params: Promise<{ slug: string
           <div className="mt-4 grid grid-cols-3 gap-3">
             {(property?.images ?? []).slice(0, 3).map((image) => (
               <div key={image.src} className="relative h-28 overflow-hidden rounded-2xl border border-slate-200 bg-slate-100">
-                <Image src={image.src ?? "/300sqm-N30m.jpeg"} alt={image.alt ?? property?.title ?? "property"} fill className="object-cover" />
+                <Image src={assetPath(image.src ?? "/300sqm-N30m.jpeg")} alt={image.alt ?? property?.title ?? "property"} fill className="object-cover" />
               </div>
             ))}
           </div>

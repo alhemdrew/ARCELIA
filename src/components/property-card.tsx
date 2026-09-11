@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Bath, BedDouble, MapPin, MessageCircle, Square, Check } from "lucide-react";
 import { waLink, PHONE_LOCAL } from "@/lib/contact";
+import assetPath from "../lib/asset-path";
 import type { Property } from "@/data/properties";
 
 export function PropertyCard({ property }: { property: Property }) {
@@ -9,7 +10,8 @@ export function PropertyCard({ property }: { property: Property }) {
 
   // image handling: properties from assets use string[]; older shape may use {src,alt}[]
   const firstImage = property.images && property.images.length > 0 ? property.images[0] : null;
-  const imageSrc = firstImage ? (typeof firstImage === "string" ? firstImage : (firstImage as any).src) : "/300sqm-N30m.jpeg";
+  const raw = firstImage ? (typeof firstImage === "string" ? firstImage : (firstImage as any).src) : "/300sqm-N30m.jpeg";
+  const imageSrc = assetPath(raw);
   const imageAlt = firstImage ? (typeof firstImage === "string" ? property.title : (firstImage as any).alt || property.title) : property.title;
 
   // price handling: prefer numeric price+currency, else use priceText
